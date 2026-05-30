@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0B0F0A;
+    color: #F0F4EE;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: #0B0F0A; }
+  ::-webkit-scrollbar-thumb { 
+    background: #2A3D25; 
+    border-radius: 2px; 
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-card/70 backdrop-blur-xl 
+           border border-white/5 shadow-lg;
+  }
+  .glass-hover {
+    @apply hover:bg-card-hover/80 
+           hover:border-white/10 transition-all duration-300;
+  }
+  .brand-glow {
+    box-shadow: 0 0 30px rgba(168, 224, 99, 0.15);
+  }
+   .input-dark {
+     @apply w-full bg-white/5 border border-white/10 
+            rounded-2xl px-4 py-3 text-text-primary 
+            placeholder:text-text-muted 
+            focus:outline-none focus:border-brand/40 
+            focus:bg-white/10 transition-all duration-200;
+   }
+   
+   /* Fix for select dropdown visibility */
+   select.input-dark option {
+     @apply bg-[#0B0F0A] text-[#F0F4EE];
+   }
+  .btn-primary {
+    @apply bg-brand text-background font-semibold 
+           px-6 py-3 rounded-2xl 
+           hover:bg-brand-dark active:scale-95 
+           transition-all duration-200;
+  }
+  .btn-ghost {
+    @apply bg-white/5 text-text-secondary 
+           border border-white/10 font-medium 
+           px-6 py-3 rounded-2xl 
+           hover:bg-white/10 hover:text-text-primary 
+           active:scale-95 transition-all duration-200;
+  }
+}
